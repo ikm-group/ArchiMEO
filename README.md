@@ -1,4 +1,4 @@
-![ArchiMEO](https://raw.github.com/ec-ikm/ArchiMEO/master/ArchiMEO_logo_text.png "ArchiMEO")
+![ArchiMEO](https://raw.github.com/ikm-group/ArchiMEO/gh-pages/ArchiMEO-logo/ArchiMEO_logo_text.png "ArchiMEO")
 ========
 Welcome to the ArchiMEO Ontology.
 

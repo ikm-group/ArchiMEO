@@ -9,6 +9,8 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix util:    <http://ikm-group.ch/archiMEO/util#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
 
 <http://ch.fhnw.ontogov#AtomicBusinessProcess>
       rdf:type owl:Class ;

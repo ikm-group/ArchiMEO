@@ -1,0 +1,14 @@
+target/
+build
+.idea
+*.ipr
+*.iws
+*.iml
+.gradle
+dist
+out
+gradle-app.setting
+nb-configuration.xml
+.settings/
+.project
+.classpath

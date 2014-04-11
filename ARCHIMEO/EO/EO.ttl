@@ -22,16 +22,16 @@
 <http://ikm-group.ch/archiMEO/eo>
       rdf:type owl:Ontology ;
       rdfs:comment "The EO as part of LEMO ontology is about enterprise objects and their relations to different model types."@en ;
-      cc:license <http://creativecommons.org/licenses/by-sa/3.0/> , "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en ;
-      dc:contributor "Barbara Thönssen"^^xsd:string , "Knut Hinkelmann"^^xsd:string ;
+      cc:license "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en , <http://creativecommons.org/licenses/by-sa/3.0/> ;
+      dc:contributor "Knut Hinkelmann"^^xsd:string , "Barbara Thönssen"^^xsd:string ;
       dc:creator "Andreas Martin"^^xsd:string , "Roman Brun"^^xsd:string ;
       dc:description "The EO Ontology."@en ;
       dc:issued "2010-01-01"^^xsd:date ;
       dc:modified "2013-05-24"^^xsd:date ;
-      dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> , <http://www.fhnw.ch/business> , "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
+      dc:publisher <http://www.fhnw.ch/business> , "University of Applied Sciences Northwestern Switzerland FHNW"@en , <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> ;
       dc:rights "Copyright 2012 FHNW"^^xsd:string ;
       dc:title "The EO Ontology"@en ;
-      owl:imports <http://ikm-group.ch/archiMEO/BMM> , <http://ikm-group.ch/archiMEO/BPMN> , <http://ikm-group.ch/archiMEO/archimate> , <http://ikm-group.ch/archiMEO/nco> , <http://ikm-group.ch/archiMEO/top> , <http://ikm-group.ch/archiMEO/util> ;
+      owl:imports <http://ikm-group.ch/archiMEO/BPMN> , <http://ikm-group.ch/archiMEO/archimate> , <http://ikm-group.ch/archiMEO/top> , <http://ikm-group.ch/archiMEO/nco> , <http://ikm-group.ch/archiMEO/BMM> , <http://ikm-group.ch/archiMEO/util> ;
       owl:versionInfo 1.0 .
 
 eo:AdministratorRole
@@ -39,13 +39,13 @@ eo:AdministratorRole
       rdfs:subClassOf eo:Employee .
 
 eo:Africa
-      rdf:type top:Continent , owl:Thing .
+      rdf:type owl:Thing , top:Continent .
 
 eo:Asia
-      rdf:type top:Continent , owl:Thing .
+      rdf:type owl:Thing , top:Continent .
 
 eo:Bankcruptcy
-      rdf:type eo:FinancialBusinessEvent , owl:Thing .
+      rdf:type owl:Thing , eo:FinancialBusinessEvent .
 
 eo:Bid
       rdf:type owl:Class ;
@@ -330,12 +330,12 @@ eo:CalendarYear
       rdfs:subClassOf top:CalendarElement .
 
 eo:Camerino
-      rdf:type top:City , owl:Thing ;
+      rdf:type owl:Thing , top:City ;
       top:cityIsLocatedInPartOfCountry
               eo:Marche .
 
 eo:CapVerde
-      rdf:type top:Country , owl:Thing ;
+      rdf:type owl:Thing , top:Country ;
       top:countryHasTypeOfState
               "Island"^^xsd:string ;
       top:countryIsLocatedInContinent
@@ -474,7 +474,7 @@ eo:Documentation
       rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> .
 
 eo:Earthquake
-      rdf:type top:ActOfGod , owl:Thing .
+      rdf:type owl:Thing , top:ActOfGod .
 
 eo:Employee
       rdf:type owl:Class ;
@@ -500,7 +500,7 @@ eo:Environment
       rdfs:subClassOf bmm:InfluencerCategory .
 
 eo:Europe
-      rdf:type top:Continent , owl:Thing .
+      rdf:type owl:Thing , top:Continent .
 
 eo:ExpertRole
       rdf:type owl:Class ;
@@ -515,27 +515,27 @@ eo:FinancialBusinessEvent
       rdfs:subClassOf archi:BusinessEvent .
 
 eo:Fire
-      rdf:type top:ActOfGod , owl:Thing .
+      rdf:type owl:Thing , top:ActOfGod .
 
 eo:Flood
-      rdf:type top:ActOfGod , owl:Thing .
+      rdf:type owl:Thing , top:ActOfGod .
 
 eo:Fukushima
-      rdf:type top:PartOfCountry , owl:Thing ;
+      rdf:type owl:Thing , top:PartOfCountry ;
       top:partOfCountryBelongsToCountry
               eo:Japan ;
       top:partOfCountryHasTypeOfPartOfCountry
               "Prefecture"^^xsd:string .
 
 eo:Germany
-      rdf:type top:Country , owl:Thing ;
+      rdf:type owl:Thing , top:Country ;
       top:countryConsistsOfPartOfCountry
               eo:RheinlandPfalz ;
       top:countryIsLocatedInContinent
               eo:Europe .
 
 eo:Hurricane
-      rdf:type top:ActOfGod , owl:Thing .
+      rdf:type owl:Thing , top:ActOfGod .
 
 eo:IdentificationData
       rdf:type owl:Class ;
@@ -543,7 +543,7 @@ eo:IdentificationData
       rdfs:subClassOf eo:DataElement .
 
 eo:Image
-      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
 
 eo:Influencer
       rdf:type owl:Class ;
@@ -564,17 +564,17 @@ eo:IntangibleProduct
       rdfs:subClassOf archi:Product .
 
 eo:Italy
-      rdf:type top:Country , owl:Thing ;
+      rdf:type owl:Thing , top:Country ;
       top:countryIsLocatedInContinent
               eo:Europe .
 
 eo:Iwaki
-      rdf:type top:City , owl:Thing ;
+      rdf:type owl:Thing , top:City ;
       top:cityIsLocatedInCountry
               eo:Japan .
 
 eo:Japan
-      rdf:type top:Country , owl:Thing ;
+      rdf:type owl:Thing , top:Country ;
       top:countryConsistsOfPartOfCountry
               eo:Fukushima ;
       top:countryIsLocatedInContinent
@@ -590,7 +590,7 @@ eo:LegalEntity
       rdfs:subClassOf archi:BusinessActor .
 
 eo:Ludwigshafen
-      rdf:type top:City , owl:Thing ;
+      rdf:type owl:Thing , top:City ;
       top:cityIsLocatedInCountry
               eo:Germany ;
       top:cityIsLocatedInPartOfCountry
@@ -611,7 +611,7 @@ eo:Manual
       rdfs:subClassOf eo:TaskExecutionCategory .
 
 eo:Marche
-      rdf:type top:PartOfCountry , owl:Thing .
+      rdf:type owl:Thing , top:PartOfCountry .
 
 eo:Method
       rdf:type owl:Class ;
@@ -624,7 +624,7 @@ eo:Money
       rdfs:subClassOf bmm:Asset .
 
 eo:MovingImage
-      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
 
 eo:NDAHasContractObjectConfidentiality
       rdf:type owl:ObjectProperty ;
@@ -663,8 +663,8 @@ eo:Partner
 
 eo:Person
       rdf:type owl:Class ;
-      rdfs:comment """\"The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF\" (FOAF)
-As we do not have the super class agent we decided to use the eo-namespace instead foaf"""@en , "replaces eo:NaturalActor"^^xsd:string ;
+      rdfs:comment "replaces eo:NaturalActor"^^xsd:string , """\"The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF\" (FOAF)
+As we do not have the super class agent we decided to use the eo-namespace instead foaf"""@en ;
       rdfs:subClassOf archi:BusinessActor .
 
 eo:Project
@@ -693,7 +693,7 @@ Wendy Currie (ed): Value Creation from E-Business Models, Butterworth-Heinemann,
       rdfs:subClassOf bmm:BusinessPolicy .
 
 eo:RheinlandPfalz
-      rdf:type top:PartOfCountry , owl:Thing .
+      rdf:type owl:Thing , top:PartOfCountry .
 
 eo:SWOT
       rdf:type owl:Class ;
@@ -706,7 +706,7 @@ eo:Sale
       rdfs:subClassOf eo:Order .
 
 eo:Sound
-      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
 
 eo:Specification
       rdf:type owl:Class ;
@@ -714,7 +714,7 @@ eo:Specification
       rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> .
 
 eo:StillImage
-      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
 
 eo:Strength
       rdf:type owl:Class ;
@@ -730,12 +730,12 @@ eo:SupplierCharacteristics
       rdfs:subClassOf bmm:AssessmentCategory .
 
 eo:SwissCodeOfObligations
-      rdf:type nco:GeneralArchivingLaw , owl:Thing ;
+      rdf:type owl:Thing , nco:GeneralArchivingLaw ;
       eo:lawAndRegulationInLocation
               eo:Switzerland .
 
 eo:Switzerland
-      rdf:type top:Country , owl:Thing ;
+      rdf:type owl:Thing , top:Country ;
       top:countryIsLocatedInContinent
               eo:Europe .
 
@@ -758,7 +758,7 @@ eo:Tender
       rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> .
 
 eo:Text
-      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
 
 eo:Threat
       rdf:type owl:Class ;
@@ -791,10 +791,10 @@ eo:TimeSecond2
       rdfs:subClassOf eo:TimeSecond .
 
 eo:Tokio
-      rdf:type top:City , owl:Thing .
+      rdf:type owl:Thing , top:City .
 
 eo:Tsunami
-      rdf:type top:ActOfGod , owl:Thing ;
+      rdf:type owl:Thing , top:ActOfGod ;
       eo:eventHasEventDescription
               ""^^xsd:string .
 
@@ -821,7 +821,7 @@ Wendy Currie (ed): Value Creation from E-Business Models, Butterworth-Heinemann,
       rdfs:subClassOf bmm:Tactic .
 
 eo:VulcanicEruption
-      rdf:type top:ActOfGod , owl:Thing .
+      rdf:type owl:Thing , top:ActOfGod .
 
 eo:Weakness
       rdf:type owl:Class ;
@@ -1546,7 +1546,7 @@ eo:dataIsManagedWithDatabaseManagementSystem
       rdf:type owl:ObjectProperty ;
       rdfs:domain eo:DataSet ;
       rdfs:label "dataIsManagedWithDatabaseManagementSystem"@en ;
-      rdfs:range eo:DataBaseManagementSystem , eo:EnterpriseResourcePlanningSystem .
+      rdfs:range eo:EnterpriseResourcePlanningSystem , eo:DataBaseManagementSystem .
 
 eo:directiveActsAsRegulation
       rdf:type owl:ObjectProperty ;
@@ -1635,7 +1635,7 @@ eo:directoryIsPartOfDirectory
       rdfs:range eo:Directory .
 
 eo:doc
-      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
 
 eo:documentBelongsToProcess
       rdf:type owl:ObjectProperty ;
@@ -1791,7 +1791,7 @@ eo:documentIsManagedWithDocumentCreationTool
       rdf:type owl:ObjectProperty ;
       rdfs:domain <http://xmlns.com/foaf/spec#Document> ;
       rdfs:label "documentIsManagedWithDocumentCreationTool"@en ;
-      rdfs:range eo:DocumentCreationTool , eo:DocumentManagementTool .
+      rdfs:range eo:DocumentManagementTool , eo:DocumentCreationTool .
 
 eo:documentIsStoredInDirectory
       rdf:type owl:ObjectProperty ;
@@ -1934,7 +1934,7 @@ eo:itSystemModelConsistsOfITService
       rdfs:label "itSystemModelConsistsOfITService"@en .
 
 eo:jpg
-      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
 
 eo:laneBelongsToPool
       rdf:type owl:ObjectProperty ;
@@ -2074,10 +2074,10 @@ eo:missionMakesOperativeVision
       rdfs:range bmm:Vision .
 
 eo:mp3
-      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
 
 eo:mp4
-      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
 
 eo:objectManagedByService
       rdf:type owl:ObjectProperty ;
@@ -2269,7 +2269,7 @@ eo:paymentObligationtHasPaymentPeriod
       rdfs:label "paymentObligationtPaymentPeriod"^^xsd:string .
 
 eo:pdf
-      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
 
 eo:personHasAddress
       rdf:type owl:DatatypeProperty ;
@@ -2367,7 +2367,7 @@ eo:potentialImpactProvidesImpetusForDirective
       rdfs:range bmm:Directive .
 
 eo:ppt
-      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
+      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
 
 eo:processHasFirstElement
       rdf:type owl:ObjectProperty ;

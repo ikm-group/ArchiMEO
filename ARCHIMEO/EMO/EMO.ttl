@@ -21,15 +21,15 @@
       rdf:type owl:Ontology ;
       rdfs:comment "The EMO ontology (as part of LEMO ontology) is about enterprise objects and their relations to different model types."@en ;
       cc:license <http://creativecommons.org/licenses/by-sa/3.0/> , "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en ;
-      dc:contributor "Barbara Thönssen"^^xsd:string , "Knut Hinkelmann"^^xsd:string ;
+      dc:contributor "Knut Hinkelmann"^^xsd:string , "Barbara Thönssen"^^xsd:string ;
       dc:creator "Andreas Martin"^^xsd:string , "Roman Brun"^^xsd:string ;
       dc:description "The EMO Ontology."@en ;
       dc:issued "2010-01-01"^^xsd:date ;
       dc:modified "2013-05-24"^^xsd:date ;
-      dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> , <http://www.fhnw.ch/business> , "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
+      dc:publisher <http://www.fhnw.ch/business> , <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> , "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
       dc:rights "Copyright 2012 FHNW"^^xsd:string ;
       dc:title "The EMO Ontology"@en ;
-      owl:imports <http://ikm-group.ch/archiMEO/BMM> , <http://ikm-group.ch/archiMEO/BPMN> , <http://ikm-group.ch/archiMEO/archimate> , <http://ikm-group.ch/archiMEO/eo> , <http://ikm-group.ch/archiMEO/util> ;
+      owl:imports <http://ikm-group.ch/archiMEO/eo> , <http://ikm-group.ch/archiMEO/BPMN> , <http://ikm-group.ch/archiMEO/BMM> , <http://ikm-group.ch/archiMEO/util> , <http://ikm-group.ch/archiMEO/archimate> ;
       owl:versionInfo 1.0 .
 
 emo:ArchimateBusinessProcessViewConsistsOfBusinessProcess

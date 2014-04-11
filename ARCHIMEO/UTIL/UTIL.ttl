@@ -4,13 +4,13 @@
 # imports: http://ikm-group.ch/archiMEO/nco
 # imports: http://ikm-group.ch/archiMEO/top
 
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix util:    <http://ikm-group.ch/archiMEO/util#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix cc:      <http://creativecommons.org/ns#> .
-@prefix dc:      <http://purl.org/dc/elements/1.1/> .
 
 <http://ch.fhnw.ontogov#AtomicBusinessProcess>
       rdf:type owl:Class ;
@@ -49,17 +49,17 @@ http://dublincore.org/documents/dcmi-type-vocabulary/"""^^xsd:string ;
 
 <http://ikm-group.ch/archiMEO/util>
       rdf:type owl:Ontology ;
-      owl:imports <http://ikm-group.ch/archiMEO/archimate> , <http://ikm-group.ch/archiMEO/eo> , <http://ikm-group.ch/archiMEO/nco> , <http://ikm-group.ch/archiMEO/top> ;
       rdfs:comment "Version 1.1: Initial import"@en ;
-      cc:license <http://creativecommons.org/licenses/by-sa/3.0/> , "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en ;
-      dc:contributor "Knut Hinkelmann"^^xsd:string , "Roman Brun"^^xsd:string , "Sandro Emmenegger"^^xsd:string ;
-      dc:creator "Andreas Martin"^^xsd:string , "Barbara Thönssen"^^xsd:string , "Simon Nikles"^^xsd:string ;
+      cc:license "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en , <http://creativecommons.org/licenses/by-sa/3.0/> ;
+      dc:contributor "Roman Brun"^^xsd:string , "Knut Hinkelmann"^^xsd:string , "Sandro Emmenegger"^^xsd:string ;
+      dc:creator "Andreas Martin"^^xsd:string , "Simon Nikles"^^xsd:string , "Barbara Thönssen"^^xsd:string ;
       dc:description "util Ontologies."@en ;
       dc:issued "2012-01-01"^^xsd:date ;
       dc:modified "2013-05-24"^^xsd:date ;
       dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> , <http://www.fhnw.ch/business> , "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
       dc:rights "Copyright 2012 FHNW"^^xsd:string ;
       dc:title "util Ontologies"@en ;
+      owl:imports <http://ikm-group.ch/archiMEO/eo> , <http://ikm-group.ch/archiMEO/top> , <http://ikm-group.ch/archiMEO/nco> , <http://ikm-group.ch/archiMEO/archimate> ;
       owl:versionInfo 1.1 .
 
 <http://purl.org/dc/elements/1.1#documentHasContributor>

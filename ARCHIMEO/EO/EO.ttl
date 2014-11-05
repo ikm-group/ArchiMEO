@@ -36,20 +36,24 @@
 
 eo:AdministratorRole
       rdf:type owl:Class ;
-      rdfs:subClassOf eo:Employee .
+      rdfs:subClassOf eo:ClerkRole .
 
 eo:Africa
-      rdf:type owl:Thing , top:Continent .
+      rdf:type top:Continent , owl:Thing .
 
 eo:Asia
-      rdf:type owl:Thing , top:Continent .
+      rdf:type top:Continent , owl:Thing .
 
 eo:Bankcruptcy
-      rdf:type owl:Thing , eo:FinancialBusinessEvent .
+      rdf:type eo:FinancialBusinessEvent , owl:Thing .
 
 eo:Bid
       rdf:type owl:Class ;
       rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> .
+
+eo:BoardMemberRole
+      rdf:type eo:DirectorsBoardRole ;
+      rdfs:label "Directors board member  (COB) "@en , "Verwaltungsratsmitglied"@de .
 
 eo:BusinessPartner
       rdf:type owl:Class ;
@@ -330,21 +334,45 @@ eo:CalendarYear
       rdfs:subClassOf top:CalendarElement .
 
 eo:Camerino
-      rdf:type owl:Thing , top:City ;
+      rdf:type top:City , owl:Thing ;
       top:cityIsLocatedInPartOfCountry
               eo:Marche .
 
 eo:CapVerde
-      rdf:type owl:Thing , top:Country ;
+      rdf:type top:Country , owl:Thing ;
       top:countryHasTypeOfState
               "Island"^^xsd:string ;
       top:countryIsLocatedInContinent
               eo:Africa .
 
+eo:ChairmanOfTheBoardRole
+      rdf:type eo:DirectorsBoardRole ;
+      rdfs:label "Chairman of the Board (COB) "@en , "Verwaltungsratspräsident "@de .
+
 eo:Channel
       rdf:type owl:Class ;
       rdfs:label "Channel"^^xsd:string ;
       rdfs:subClassOf bmm:Strategy .
+
+eo:ChiefExecutiveOfficerRole
+      rdf:type eo:ChiefOfficerRole ;
+      rdfs:comment "Der Chief Executive Officer (CEO) ist die US-amerikanische Bezeichnung für das geschäftsführende Vorstandsmitglied (deutsche, schweizerische und österreichische Bezeichnung: Geschäftsführer) bzw. den Vorstandsvorsitzenden oder Generaldirektor (deutsche, schweizerische und österreichische Bezeichnung: Vorsitzender oder Präsident der Geschäftsleitung) eines Unternehmens oder einfach dessen allein zeichnungsberechtigtem Geschäftsführer."@de , "A chief executive officer (CEO) is generally the most senior corporate officer (executive) or administrator in charge of managing a for-profit organization. The CEO of a corporation or company typically reports to the board of directors and is charged with maximizing the value of the entity. Titles often used as synonyms for CEO include president, managing director (MD) and chief executive (CE)."@en ;
+      rdfs:label "Geschäftsführer "@de , "Chief Executive Officer (CEO) "@en .
+
+eo:ChiefFinancialOfficerRole
+      rdf:type eo:ChiefOfficerRole ;
+      rdfs:comment "Die Funktionsbezeichnung Chief Financial Officer (CFO) aus dem angelsächsischen Raum entspricht im Deutschen etwa dem Kaufmännischen Geschäftsführer einer GmbH oder dem Finanzvorstand bei Aktiengesellschaften."@de , "The chief financial officer (CFO) or chief financial and operating officer (CFOO) is a corporate officer primarily responsible for managing the financial risks of the corporation."@en ;
+      rdfs:label "Finanzvorstand "@de , "Chief Financial Officer (CFO) "@en .
+
+eo:ChiefOfficerRole
+      rdf:type owl:Class ;
+      rdfs:label "Chief Officer "@en , "Geschäftsleitungsmitglied / Vostandsmitglied"@de ;
+      rdfs:subClassOf eo:ManagerRole .
+
+eo:ChiefOperatingOfficerRole
+      rdf:type eo:ChiefOfficerRole ;
+      rdfs:comment "A chief operating officer (COO), also called the chief operations officer, director of operations, or operations director, is a position that can be one of the highest-ranking executive positions in an organization, comprising part of the \"C-Suite\". The COO is responsible for the daily operation of the company, and routinely reports to the highest ranking executive, usually the chief executive officer (CEO). The COO may also carry the title of President which makes that person the second in command at the firm, especially if the highest ranking executive is the Chairman and CEO."@en , "Der COO ist ein Manager, der das operative Geschäft leitet beziehungsweise betreut. Zu seinen Aufgaben zählen die Leitung, Steuerung und Organisation der gesamten Betriebsprozesse und der betrieblichen Leistungen."@de ;
+      rdfs:label "Chief Operating Officer (COO) "@en , "Leiter des operativen Geschäfts "@de .
 
 eo:CityHasNickName
       rdf:type owl:DatatypeProperty .
@@ -445,6 +473,11 @@ eo:DataSet
       rdfs:label "Data"^^xsd:string ;
       rdfs:subClassOf archi:DataObject .
 
+eo:DirectorsBoardRole
+      rdf:type owl:Class ;
+      rdfs:label "Member of the board of Directors(COO) "@en , "Verwaltungsratsmitglied "@de ;
+      rdfs:subClassOf eo:ManagerRole .
+
 eo:Directory
       rdf:type owl:Class ;
       rdfs:subClassOf archi:Node .
@@ -474,7 +507,7 @@ eo:Documentation
       rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> .
 
 eo:Earthquake
-      rdf:type owl:Thing , top:ActOfGod .
+      rdf:type top:ActOfGod , owl:Thing .
 
 eo:Employee
       rdf:type owl:Class ;
@@ -500,7 +533,7 @@ eo:Environment
       rdfs:subClassOf bmm:InfluencerCategory .
 
 eo:Europe
-      rdf:type owl:Thing , top:Continent .
+      rdf:type top:Continent , owl:Thing .
 
 eo:ExpertRole
       rdf:type owl:Class ;
@@ -515,27 +548,27 @@ eo:FinancialBusinessEvent
       rdfs:subClassOf archi:BusinessEvent .
 
 eo:Fire
-      rdf:type owl:Thing , top:ActOfGod .
+      rdf:type top:ActOfGod , owl:Thing .
 
 eo:Flood
-      rdf:type owl:Thing , top:ActOfGod .
+      rdf:type top:ActOfGod , owl:Thing .
 
 eo:Fukushima
-      rdf:type owl:Thing , top:PartOfCountry ;
+      rdf:type top:PartOfCountry , owl:Thing ;
       top:partOfCountryBelongsToCountry
               eo:Japan ;
       top:partOfCountryHasTypeOfPartOfCountry
               "Prefecture"^^xsd:string .
 
 eo:Germany
-      rdf:type owl:Thing , top:Country ;
+      rdf:type top:Country , owl:Thing ;
       top:countryConsistsOfPartOfCountry
               eo:RheinlandPfalz ;
       top:countryIsLocatedInContinent
               eo:Europe .
 
 eo:Hurricane
-      rdf:type owl:Thing , top:ActOfGod .
+      rdf:type top:ActOfGod , owl:Thing .
 
 eo:IdentificationData
       rdf:type owl:Class ;
@@ -543,7 +576,7 @@ eo:IdentificationData
       rdfs:subClassOf eo:DataElement .
 
 eo:Image
-      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
+      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
 
 eo:Influencer
       rdf:type owl:Class ;
@@ -564,17 +597,17 @@ eo:IntangibleProduct
       rdfs:subClassOf archi:Product .
 
 eo:Italy
-      rdf:type owl:Thing , top:Country ;
+      rdf:type top:Country , owl:Thing ;
       top:countryIsLocatedInContinent
               eo:Europe .
 
 eo:Iwaki
-      rdf:type owl:Thing , top:City ;
+      rdf:type top:City , owl:Thing ;
       top:cityIsLocatedInCountry
               eo:Japan .
 
 eo:Japan
-      rdf:type owl:Thing , top:Country ;
+      rdf:type top:Country , owl:Thing ;
       top:countryConsistsOfPartOfCountry
               eo:Fukushima ;
       top:countryIsLocatedInContinent
@@ -590,7 +623,7 @@ eo:LegalEntity
       rdfs:subClassOf archi:BusinessActor .
 
 eo:Ludwigshafen
-      rdf:type owl:Thing , top:City ;
+      rdf:type top:City , owl:Thing ;
       top:cityIsLocatedInCountry
               eo:Germany ;
       top:cityIsLocatedInPartOfCountry
@@ -611,7 +644,7 @@ eo:Manual
       rdfs:subClassOf eo:TaskExecutionCategory .
 
 eo:Marche
-      rdf:type owl:Thing , top:PartOfCountry .
+      rdf:type top:PartOfCountry , owl:Thing .
 
 eo:Method
       rdf:type owl:Class ;
@@ -624,7 +657,7 @@ eo:Money
       rdfs:subClassOf bmm:Asset .
 
 eo:MovingImage
-      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
+      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
 
 eo:NDAHasContractObjectConfidentiality
       rdf:type owl:ObjectProperty ;
@@ -663,15 +696,15 @@ eo:Partner
 
 eo:Person
       rdf:type owl:Class ;
-      rdfs:comment "replaces eo:NaturalActor"^^xsd:string , """\"The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF\" (FOAF)
-As we do not have the super class agent we decided to use the eo-namespace instead foaf"""@en ;
+      rdfs:comment """\"The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF\" (FOAF)
+As we do not have the super class agent we decided to use the eo-namespace instead foaf"""@en , "replaces eo:NaturalActor"^^xsd:string ;
       rdfs:subClassOf archi:BusinessActor .
 
-eo:ProgramManager
+eo:ProgramManagerRole
       rdf:type eo:ManagerRole ;
       rdfs:label "Program Manager"@en , "Programmleiter"@de .
 
-eo:Programmer
+eo:ProgrammerRole
       rdf:type eo:ExpertRole ;
       rdfs:label "Programmer "@en , "Programmierer"@de .
 
@@ -679,7 +712,7 @@ eo:Project
       rdf:type owl:Class ;
       rdfs:subClassOf archi:BusinessObject .
 
-eo:ProjectLead
+eo:ProjectLeadRole
       rdf:type eo:ManagerRole ;
       rdfs:label "Project Lead "@en , "Projektleiter "@de .
 
@@ -705,7 +738,7 @@ Wendy Currie (ed): Value Creation from E-Business Models, Butterworth-Heinemann,
       rdfs:subClassOf bmm:BusinessPolicy .
 
 eo:RheinlandPfalz
-      rdf:type owl:Thing , top:PartOfCountry .
+      rdf:type top:PartOfCountry , owl:Thing .
 
 eo:SWOT
       rdf:type owl:Class ;
@@ -717,16 +750,16 @@ eo:Sale
       rdfs:label "Sale"@en ;
       rdfs:subClassOf eo:Order .
 
-eo:SalesManager
+eo:SalesManagerRole
       rdf:type eo:ManagerRole ;
       rdfs:label "Sales Manager "@en , "Verkaufsmanager "@de .
 
-eo:SoftwareArchitect
+eo:SoftwareArchitectRole
       rdf:type eo:ExpertRole ;
       rdfs:label "Software Architect "@en , "Softwarearchitekt "@de .
 
 eo:Sound
-      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
+      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
 
 eo:Specification
       rdf:type owl:Class ;
@@ -734,7 +767,7 @@ eo:Specification
       rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> .
 
 eo:StillImage
-      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
+      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
 
 eo:Strength
       rdf:type owl:Class ;
@@ -750,12 +783,12 @@ eo:SupplierCharacteristics
       rdfs:subClassOf bmm:AssessmentCategory .
 
 eo:SwissCodeOfObligations
-      rdf:type owl:Thing , nco:GeneralArchivingLaw ;
+      rdf:type nco:GeneralArchivingLaw , owl:Thing ;
       eo:lawAndRegulationInLocation
               eo:Switzerland .
 
 eo:Switzerland
-      rdf:type owl:Thing , top:Country ;
+      rdf:type top:Country , owl:Thing ;
       top:countryIsLocatedInContinent
               eo:Europe .
 
@@ -768,7 +801,7 @@ eo:TaskExecutionCategory
       rdf:type owl:Class ;
       rdfs:subClassOf nco:Category .
 
-eo:TechnicalConsultant
+eo:TechnicalConsultantRole
       rdf:type eo:ExpertRole ;
       rdfs:label "Technischer Berater "@de , "Technical Consultant "@en .
 
@@ -781,8 +814,12 @@ eo:Tender
       rdf:type owl:Class ;
       rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> .
 
+eo:TestManagerRole
+      rdf:type eo:ManagerRole ;
+      rdfs:label "Testmanager"@en , "Testmanager"@de .
+
 eo:Text
-      rdf:type owl:Thing , <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> .
+      rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
 
 eo:Threat
       rdf:type owl:Class ;
@@ -815,10 +852,10 @@ eo:TimeSecond2
       rdfs:subClassOf eo:TimeSecond .
 
 eo:Tokio
-      rdf:type owl:Thing , top:City .
+      rdf:type top:City , owl:Thing .
 
 eo:Tsunami
-      rdf:type owl:Thing , top:ActOfGod ;
+      rdf:type top:ActOfGod , owl:Thing ;
       eo:eventHasEventDescription
               ""^^xsd:string .
 
@@ -845,7 +882,7 @@ Wendy Currie (ed): Value Creation from E-Business Models, Butterworth-Heinemann,
       rdfs:subClassOf bmm:Tactic .
 
 eo:VulcanicEruption
-      rdf:type owl:Thing , top:ActOfGod .
+      rdf:type top:ActOfGod , owl:Thing .
 
 eo:Weakness
       rdf:type owl:Class ;
@@ -1569,7 +1606,7 @@ eo:dataIsManagedWithDatabaseManagementSystem
       rdf:type owl:ObjectProperty ;
       rdfs:domain eo:DataSet ;
       rdfs:label "dataIsManagedWithDatabaseManagementSystem"@en ;
-      rdfs:range eo:EnterpriseResourcePlanningSystem , eo:DataBaseManagementSystem .
+      rdfs:range eo:DataBaseManagementSystem , eo:EnterpriseResourcePlanningSystem .
 
 eo:directiveActsAsRegulation
       rdf:type owl:ObjectProperty ;
@@ -1658,7 +1695,7 @@ eo:directoryIsPartOfDirectory
       rdfs:range eo:Directory .
 
 eo:doc
-      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
+      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
 
 eo:documentBelongsToProcess
       rdf:type owl:ObjectProperty ;
@@ -1814,7 +1851,7 @@ eo:documentIsManagedWithDocumentCreationTool
       rdf:type owl:ObjectProperty ;
       rdfs:domain <http://xmlns.com/foaf/spec#Document> ;
       rdfs:label "documentIsManagedWithDocumentCreationTool"@en ;
-      rdfs:range eo:DocumentManagementTool , eo:DocumentCreationTool .
+      rdfs:range eo:DocumentCreationTool , eo:DocumentManagementTool .
 
 eo:documentIsStoredInDirectory
       rdf:type owl:ObjectProperty ;
@@ -1957,7 +1994,7 @@ eo:itSystemModelConsistsOfITService
       rdfs:label "itSystemModelConsistsOfITService"@en .
 
 eo:jpg
-      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
+      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
 
 eo:laneBelongsToPool
       rdf:type owl:ObjectProperty ;
@@ -2097,10 +2134,10 @@ eo:missionMakesOperativeVision
       rdfs:range bmm:Vision .
 
 eo:mp3
-      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
+      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
 
 eo:mp4
-      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
+      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
 
 eo:objectManagedByService
       rdf:type owl:ObjectProperty ;
@@ -2292,7 +2329,7 @@ eo:paymentObligationtHasPaymentPeriod
       rdfs:label "paymentObligationtPaymentPeriod"^^xsd:string .
 
 eo:pdf
-      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
+      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
 
 eo:personHasAddress
       rdf:type owl:DatatypeProperty ;
@@ -2385,7 +2422,7 @@ eo:potentialImpactProvidesImpetusForDirective
       rdfs:range bmm:Directive .
 
 eo:ppt
-      rdf:type owl:Thing , <http://www.iana.org/assignments/media-types#MIMETYPE> .
+      rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> , owl:Thing .
 
 eo:processHasFirstElement
       rdf:type owl:ObjectProperty ;

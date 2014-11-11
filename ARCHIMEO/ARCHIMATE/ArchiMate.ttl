@@ -18,16 +18,16 @@
 <http://ikm-group.ch/archiMEO/archimate>
       rdf:type owl:Ontology ;
       rdfs:comment "Version 1.1: Initial import"@en ;
-      cc:license "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en , <http://creativecommons.org/licenses/by-sa/3.0/> ;
-      dc:contributor "Knut Hinkelmann"^^xsd:string , "Sandro Emmenegger"^^xsd:string , "Roman Brun"^^xsd:string ;
-      dc:creator "Barbara Thönssen"^^xsd:string , "Simon Nikles"^^xsd:string , "Andreas Martin"^^xsd:string ;
+      cc:license <http://creativecommons.org/licenses/by-sa/3.0/> , "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en ;
+      dc:contributor "Knut Hinkelmann"^^xsd:string , "Roman Brun"^^xsd:string , "Sandro Emmenegger"^^xsd:string ;
+      dc:creator "Andreas Martin"^^xsd:string , "Barbara Thönssen"^^xsd:string , "Simon Nikles"^^xsd:string ;
       dc:description "The ArchiMate Ontology."@en ;
       dc:issued "2012-01-01"^^xsd:date ;
       dc:modified "2013-05-24"^^xsd:date ;
       dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> , <http://www.fhnw.ch/business> , "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
       dc:rights "Copyright 2012 FHNW"^^xsd:string ;
       dc:title "The ArchiMate Ontology"@en ;
-      owl:imports <http://ikm-group.ch/archiMEO/top> , <http://ikm-group.ch/archiMEO/eo> , <http://ikm-group.ch/archiMEO/emo> ;
+      owl:imports <http://ikm-group.ch/archiMEO/emo> , <http://ikm-group.ch/archiMEO/eo> , <http://ikm-group.ch/archiMEO/top> ;
       owl:versionInfo 1.1 .
 
 archi:Access
@@ -231,7 +231,7 @@ archi:InfrastructureService
       rdf:type owl:Class ;
       rdfs:comment """Archimate V1.0 Technology Layer Concept.
 \"An externally visible unit of functionality, provided by one or more nodes, exposed through well-defined interfaces, and meaningful to the environment.\" (OpenGroup 2009)"""^^xsd:string ;
-      rdfs:subClassOf archi:StructureElement .
+      rdfs:subClassOf archi:Service .
 
 archi:Interface
       rdf:type owl:Class ;

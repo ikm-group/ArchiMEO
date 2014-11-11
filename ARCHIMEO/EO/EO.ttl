@@ -22,16 +22,16 @@
 <http://ikm-group.ch/archiMEO/eo>
       rdf:type owl:Ontology ;
       rdfs:comment "The EO as part of LEMO ontology is about enterprise objects and their relations to different model types."@en ;
-      cc:license "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en , <http://creativecommons.org/licenses/by-sa/3.0/> ;
-      dc:contributor "Knut Hinkelmann"^^xsd:string , "Barbara Thönssen"^^xsd:string ;
+      cc:license <http://creativecommons.org/licenses/by-sa/3.0/> , "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en ;
+      dc:contributor "Barbara Thönssen"^^xsd:string , "Knut Hinkelmann"^^xsd:string ;
       dc:creator "Andreas Martin"^^xsd:string , "Roman Brun"^^xsd:string ;
       dc:description "The EO Ontology."@en ;
       dc:issued "2010-01-01"^^xsd:date ;
       dc:modified "2013-05-24"^^xsd:date ;
-      dc:publisher <http://www.fhnw.ch/business> , "University of Applied Sciences Northwestern Switzerland FHNW"@en , <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> ;
+      dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> , <http://www.fhnw.ch/business> , "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
       dc:rights "Copyright 2012 FHNW"^^xsd:string ;
       dc:title "The EO Ontology"@en ;
-      owl:imports <http://ikm-group.ch/archiMEO/BPMN> , <http://ikm-group.ch/archiMEO/archimate> , <http://ikm-group.ch/archiMEO/top> , <http://ikm-group.ch/archiMEO/nco> , <http://ikm-group.ch/archiMEO/BMM> , <http://ikm-group.ch/archiMEO/util> ;
+      owl:imports <http://ikm-group.ch/archiMEO/BMM> , <http://ikm-group.ch/archiMEO/BPMN> , <http://ikm-group.ch/archiMEO/archimate> , <http://ikm-group.ch/archiMEO/nco> , <http://ikm-group.ch/archiMEO/top> , <http://ikm-group.ch/archiMEO/util> ;
       owl:versionInfo 1.0 .
 
 eo:AdministratorRole
@@ -356,13 +356,13 @@ eo:Channel
 
 eo:ChiefExecutiveOfficerRole
       rdf:type eo:ChiefOfficerRole ;
-      rdfs:comment "Der Chief Executive Officer (CEO) ist die US-amerikanische Bezeichnung für das geschäftsführende Vorstandsmitglied (deutsche, schweizerische und österreichische Bezeichnung: Geschäftsführer) bzw. den Vorstandsvorsitzenden oder Generaldirektor (deutsche, schweizerische und österreichische Bezeichnung: Vorsitzender oder Präsident der Geschäftsleitung) eines Unternehmens oder einfach dessen allein zeichnungsberechtigtem Geschäftsführer."@de , "A chief executive officer (CEO) is generally the most senior corporate officer (executive) or administrator in charge of managing a for-profit organization. The CEO of a corporation or company typically reports to the board of directors and is charged with maximizing the value of the entity. Titles often used as synonyms for CEO include president, managing director (MD) and chief executive (CE)."@en ;
-      rdfs:label "Geschäftsführer "@de , "Chief Executive Officer (CEO) "@en .
+      rdfs:comment "A chief executive officer (CEO) is generally the most senior corporate officer (executive) or administrator in charge of managing a for-profit organization. The CEO of a corporation or company typically reports to the board of directors and is charged with maximizing the value of the entity. Titles often used as synonyms for CEO include president, managing director (MD) and chief executive (CE)."@en , "Der Chief Executive Officer (CEO) ist die US-amerikanische Bezeichnung für das geschäftsführende Vorstandsmitglied (deutsche, schweizerische und österreichische Bezeichnung: Geschäftsführer) bzw. den Vorstandsvorsitzenden oder Generaldirektor (deutsche, schweizerische und österreichische Bezeichnung: Vorsitzender oder Präsident der Geschäftsleitung) eines Unternehmens oder einfach dessen allein zeichnungsberechtigtem Geschäftsführer."@de ;
+      rdfs:label "Chief Executive Officer (CEO) "@en , "Geschäftsführer "@de .
 
 eo:ChiefFinancialOfficerRole
       rdf:type eo:ChiefOfficerRole ;
       rdfs:comment "Die Funktionsbezeichnung Chief Financial Officer (CFO) aus dem angelsächsischen Raum entspricht im Deutschen etwa dem Kaufmännischen Geschäftsführer einer GmbH oder dem Finanzvorstand bei Aktiengesellschaften."@de , "The chief financial officer (CFO) or chief financial and operating officer (CFOO) is a corporate officer primarily responsible for managing the financial risks of the corporation."@en ;
-      rdfs:label "Finanzvorstand "@de , "Chief Financial Officer (CFO) "@en .
+      rdfs:label "Chief Financial Officer (CFO) "@en , "Finanzvorstand "@de .
 
 eo:ChiefOfficerRole
       rdf:type owl:Class ;
@@ -803,7 +803,7 @@ eo:TaskExecutionCategory
 
 eo:TechnicalConsultantRole
       rdf:type eo:ExpertRole ;
-      rdfs:label "Technischer Berater "@de , "Technical Consultant "@en .
+      rdfs:label "Technical Consultant "@en , "Technischer Berater "@de .
 
 eo:Technology
       rdf:type owl:Class ;
@@ -816,7 +816,7 @@ eo:Tender
 
 eo:TestManagerRole
       rdf:type eo:ManagerRole ;
-      rdfs:label "Testmanager"@en , "Testmanager"@de .
+      rdfs:label "Testmanager"@de , "Testmanager"@en .
 
 eo:Text
       rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> , owl:Thing .
@@ -1231,7 +1231,8 @@ eo:businessRoleIsAssignedToBusinessActor
 eo:businessRoleIsPerformedByPerson
       rdf:type owl:ObjectProperty ;
       rdfs:domain archi:BusinessRole ;
-      rdfs:range eo:Person .
+      rdfs:range eo:Person ;
+      owl:inverseOf eo:personPerformsBusinessRole .
 
 eo:businessRolePerformsBusinessFunction
       rdf:type owl:ObjectProperty ;
@@ -2396,6 +2397,11 @@ eo:personIsMemberOfOrganisationalUnit
       rdfs:label "personIsMemberOfOrganisationalUnit"^^xsd:string ;
       rdfs:range eo:OrganisationalUnit ;
       rdfs:subPropertyOf eo:actorIsMemberOfLegalEntity .
+
+eo:personPerformsBusinessRole
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain eo:Person ;
+      rdfs:range archi:BusinessRole .
 
 eo:personRepresentsLegalEntity
       rdf:type owl:ObjectProperty ;

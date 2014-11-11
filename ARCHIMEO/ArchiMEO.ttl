@@ -45,7 +45,7 @@
   dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> ;
   dc:publisher <http://www.fhnw.ch/business> ;
   dc:publisher "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
-  dc:rights "Copyright 2012 FHNW "^^xsd:string ;
+  dc:rights "Copyright 2012 FHNW"^^xsd:string ;
   dc:title "The ArchiMEO Ontology"@en ;
   rdfs:comment "Version 1.1: Initial import"@en ;
   owl:imports <http://ikm-group.ch/archiMEO/BMM> ;

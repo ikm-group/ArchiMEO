@@ -31,7 +31,7 @@
   dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> ;
   dc:publisher <http://www.fhnw.ch/business> ;
   dc:publisher "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
-  dc:rights "Copyright 2012 FHNW "^^xsd:string ;
+  dc:rights "Copyright 2012 FHNW"^^xsd:string ;
   dc:title "The EMO Ontology"@en ;
   rdfs:comment "The EMO ontology (as part of LEMO ontology) is about enterprise objects and their relations to different model types."@en ;
   owl:imports <http://ikm-group.ch/archiMEO/BMM> ;
@@ -466,6 +466,31 @@ emo:BPMNConsistsOfUserTask
   rdfs:label "BPMNConsistsOfUserTask"^^xsd:string ;
   rdfs:range bpmn:UserTask ;
   rdfs:subPropertyOf emo:modelTypeConsistsOfEnterpriseObject ;
+.
+emo:BusinessMotivationModelNotation
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:ModellingLanguage ;
+.
+emo:BusinessProcessModelNotation
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:ModellingLanguage ;
+.
+emo:CaseManagementModelNotation
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:ModellingLanguage ;
+.
+emo:DocumentModelNotation
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:ModellingLanguage ;
+.
+emo:ModellingLanguage
+  rdf:type owl:Class ;
+  rdfs:comment "An Architecture Description Language (ADL) is a language designed to model a system (http://www.mrtc.mdh.se/han/FoPlan/ass2-bjornander.pdf)"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+emo:OrganisationModelNotation
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:ModellingLanguage ;
 .
 emo:Perspective
   rdf:type owl:Class ;

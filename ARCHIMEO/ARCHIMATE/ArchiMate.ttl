@@ -279,7 +279,7 @@ archi:Junction
 .
 archi:LibraryViewpoint
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://ikm-group.ch/archimeo/iso42010#ArchitectureDescriptionMetaModel> ;
+  rdfs:subClassOf <http://ikm-group.ch/archimeo/iso42010#ADMetaModel> ;
 .
 archi:Meaning
   rdf:type owl:Class ;

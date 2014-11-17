@@ -193,7 +193,6 @@ emo:ArchimateConsistsOfValue
 .
 emo:Aspect
   rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
 .
 emo:BMMConsistsOfAssessment
   rdf:type owl:ObjectProperty ;
@@ -467,42 +466,34 @@ emo:BPMNConsistsOfUserTask
   rdfs:range bpmn:UserTask ;
   rdfs:subPropertyOf emo:modelTypeConsistsOfEnterpriseObject ;
 .
-emo:BusinessMotivationModelNotation
+emo:BPMN_MetaModel
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:ModellingLanguage ;
+  rdfs:subClassOf emo:BusinessMetaModel ;
 .
-emo:BusinessProcessModelNotation
+emo:BusinessMetaModel
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:ModellingLanguage ;
-.
-emo:CaseManagementModelNotation
-  rdf:type owl:Class ;
-  rdfs:subClassOf emo:ModellingLanguage ;
-.
-emo:DocumentModelNotation
-  rdf:type owl:Class ;
-  rdfs:subClassOf emo:ModellingLanguage ;
-.
-emo:ModellingLanguage
-  rdf:type owl:Class ;
+  rdfs:comment "\"A model that defines the components of a conceptual model, process, or system\" (http://dictionary.reference.com/browse/metamodel). This replaces former concept emo:ArchitectureDescriptionLanguage."^^xsd:string ;
   rdfs:comment "An Architecture Description Language (ADL) is a language designed to model a system (http://www.mrtc.mdh.se/han/FoPlan/ass2-bjornander.pdf)"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
 .
-emo:OrganisationModelNotation
+emo:BusinessMotivationMetaModel
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:ModellingLanguage ;
+  rdfs:subClassOf emo:BusinessMetaModel ;
+.
+emo:CaseManagementMetaModel
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:BusinessMetaModel ;
+.
+emo:DocumentMetaModel
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:BusinessMetaModel ;
+.
+emo:OrganisationMetaModel
+  rdf:type owl:Class ;
+  rdfs:subClassOf emo:BusinessMetaModel ;
 .
 emo:Perspective
   rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
-.
-emo:View
-  rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
-.
-emo:Viewpoint
-  rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
 .
 emo:applicationArchitectureBelongsToAspectLeo
   rdf:type owl:ObjectProperty ;

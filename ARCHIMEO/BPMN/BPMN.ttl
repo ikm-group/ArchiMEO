@@ -48,7 +48,7 @@ bpmn:Activity
 bpmn:Annotation
   rdf:type owl:Class ;
   rdfs:label "Annotation"^^xsd:string ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
   rdfs:subClassOf eo:Documentation ;
 .
 bpmn:Association
@@ -80,7 +80,7 @@ bpmn:ConditionalStartEvent
 .
 bpmn:Data
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
 .
 bpmn:DataAssociation
   rdf:type owl:Class ;
@@ -106,7 +106,7 @@ bpmn:ErrorIntermediateEvent
 .
 bpmn:Event
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
 .
 bpmn:ExclusiveGateway
   rdf:type owl:Class ;
@@ -115,12 +115,12 @@ bpmn:ExclusiveGateway
 .
 bpmn:FlowElement
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
 .
 bpmn:FlowElementContainer
   rdf:type owl:Class ;
   rdfs:comment "Pool is the graphical representation of a Participant in a Collaboration"^^xsd:string ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
 .
 bpmn:FlowNode
   rdf:type owl:Class ;
@@ -128,7 +128,7 @@ bpmn:FlowNode
 .
 bpmn:FlowObject
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
 .
 bpmn:Gateway
   rdf:type owl:Class ;
@@ -136,12 +136,12 @@ bpmn:Gateway
 and diverge within a Process.\" (OMG 2009)"""^^xsd:string ;
   rdfs:label "Gateway"^^xsd:string ;
   rdfs:subClassOf archi:Junction ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
 .
 bpmn:Group
   rdf:type owl:Class ;
   rdfs:label "Group"^^xsd:string ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
   rdfs:subClassOf eo:Documentation ;
 .
 bpmn:InclusiveGateway
@@ -195,7 +195,7 @@ bpmn:ParallelGateway
 .
 bpmn:Participant
   rdf:type owl:Class ;
-  rdfs:subClassOf emo:BusinessProcessModelNotation ;
+  rdfs:subClassOf emo:BPMN_MetaModel ;
 .
 bpmn:Pool
   rdf:type owl:Class ;

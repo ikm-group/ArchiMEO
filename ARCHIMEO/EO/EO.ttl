@@ -11,7 +11,9 @@
 @prefix bpmn: <http://ikm-group.ch/archiMEO/BPMN#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcmi-type-vocabulary: <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#> .
 @prefix eo: <http://ikm-group.ch/archiMEO/eo#> .
+@prefix media-types: <http://www.iana.org/assignments/media-types#> .
 @prefix nco: <http://ikm-group.ch/archiMEO/nco#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -68,6 +70,12 @@ eo:BoardMemberRole
   rdf:type eo:DirectorsBoardRole ;
   rdfs:label "Directors board member  (COB) "@en ;
   rdfs:label "Verwaltungsratsmitglied"@de ;
+.
+eo:BusinessActivity
+  rdf:type owl:Class ;
+  rdfs:comment "Listed in the relationship table but not in the description of the  standard (thb)"@en ;
+  rdfs:comment "Replaces former archi:BusinessActivity because 'BusinessActivity' is not in ArchiMate V2.1"^^xsd:string ;
+  rdfs:subClassOf archi:BusinessBehaviourElement ;
 .
 eo:BusinessPartner
   rdf:type owl:Class ;
@@ -601,7 +609,7 @@ eo:IdentificationData
   rdfs:subClassOf eo:DataElement ;
 .
 eo:Image
-  rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> ;
+  rdf:type dcmi-type-vocabulary:DCMITYPE ;
   rdf:type owl:Thing ;
 .
 eo:Influencer
@@ -682,7 +690,7 @@ eo:Money
   rdfs:subClassOf bmm:Asset ;
 .
 eo:MovingImage
-  rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> ;
+  rdf:type dcmi-type-vocabulary:DCMITYPE ;
   rdf:type owl:Thing ;
 .
 eo:NDAHasContractObjectConfidentiality
@@ -792,7 +800,7 @@ eo:SoftwareArchitectRole
   rdfs:label "Softwarearchitekt "@de ;
 .
 eo:Sound
-  rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> ;
+  rdf:type dcmi-type-vocabulary:DCMITYPE ;
   rdf:type owl:Thing ;
 .
 eo:Specification
@@ -801,7 +809,7 @@ eo:Specification
   rdfs:subClassOf <http://xmlns.com/foaf/spec#Document> ;
 .
 eo:StillImage
-  rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> ;
+  rdf:type dcmi-type-vocabulary:DCMITYPE ;
   rdf:type owl:Thing ;
 .
 eo:Strength
@@ -856,7 +864,7 @@ eo:TestManagerRole
   rdfs:label "Testmanager"@en ;
 .
 eo:Text
-  rdf:type <http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary#DCMITYPE> ;
+  rdf:type dcmi-type-vocabulary:DCMITYPE ;
   rdf:type owl:Thing ;
 .
 eo:Threat
@@ -1771,7 +1779,7 @@ eo:directoryIsPartOfDirectory
   rdfs:range eo:Directory ;
 .
 eo:doc
-  rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> ;
+  rdf:type media-types:MIMETYPE ;
   rdf:type owl:Thing ;
 .
 eo:documentBelongsToProcess
@@ -2072,7 +2080,7 @@ eo:itSystemModelConsistsOfITService
   rdfs:label "itSystemModelConsistsOfITService"@en ;
 .
 eo:jpg
-  rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> ;
+  rdf:type media-types:MIMETYPE ;
   rdf:type owl:Thing ;
 .
 eo:laneBelongsToPool
@@ -2217,11 +2225,11 @@ eo:missionMakesOperativeVision
   rdfs:range bmm:Vision ;
 .
 eo:mp3
-  rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> ;
+  rdf:type media-types:MIMETYPE ;
   rdf:type owl:Thing ;
 .
 eo:mp4
-  rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> ;
+  rdf:type media-types:MIMETYPE ;
   rdf:type owl:Thing ;
 .
 eo:objectManagedByService
@@ -2432,7 +2440,7 @@ eo:paymentObligationtHasPaymentPeriod
   rdfs:label "paymentObligationtPaymentPeriod"^^xsd:string ;
 .
 eo:pdf
-  rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> ;
+  rdf:type media-types:MIMETYPE ;
   rdf:type owl:Thing ;
 .
 eo:personHasAddress
@@ -2531,7 +2539,7 @@ eo:potentialImpactProvidesImpetusForDirective
   rdfs:range bmm:Directive ;
 .
 eo:ppt
-  rdf:type <http://www.iana.org/assignments/media-types#MIMETYPE> ;
+  rdf:type media-types:MIMETYPE ;
   rdf:type owl:Thing ;
 .
 eo:processHasFirstElement

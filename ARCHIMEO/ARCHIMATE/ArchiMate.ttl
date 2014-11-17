@@ -2,6 +2,7 @@
 # imports: http://ikm-group.ch/archiMEO/emo
 # imports: http://ikm-group.ch/archiMEO/eo
 # imports: http://ikm-group.ch/archiMEO/top
+# imports: http://ikm-group.ch/archimeo/iso42010
 
 @prefix archi: <http://ikm-group.ch/archiMEO/archimate#> .
 @prefix cc: <http://creativecommons.org/ns#> .
@@ -38,6 +39,7 @@
   owl:imports <http://ikm-group.ch/archiMEO/emo> ;
   owl:imports <http://ikm-group.ch/archiMEO/eo> ;
   owl:imports <http://ikm-group.ch/archiMEO/top> ;
+  owl:imports <http://ikm-group.ch/archimeo/iso42010> ;
   owl:versionInfo 2.1 ;
 .
 archi:Access
@@ -275,6 +277,10 @@ archi:Junction
 \"A junction is used to connect relationships of the same type.\" (OpenGroup 2009)"""^^xsd:string ;
   rdfs:subClassOf archi:OtherRelationships ;
 .
+archi:LibraryViewpoint
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://ikm-group.ch/archimeo/iso42010#ArchitectureDescriptionMetaModel> ;
+.
 archi:Meaning
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
@@ -452,6 +458,11 @@ archi:influence
   rdfs:domain eo:EnterpriseObject ;
   rdfs:range eo:EnterpriseObject ;
 .
+archi:modelEstablishesMethodsForViewpoint
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://ikm-group.ch/archimeo/iso42010#ArchitectureModel> ;
+  rdfs:range <http://ikm-group.ch/archimeo/iso42010#ArchitectureViewpoint> ;
+.
 archi:passiveStructureComprisesObject
   rdf:type owl:ObjectProperty ;
   rdfs:range archi:PassiveStructureElement ;
@@ -492,9 +503,8 @@ archi:usedBy
   rdfs:label "used by"@en ;
   rdfs:range eo:EnterpriseObject ;
 .
-eo:BusinessActivity
-  rdf:type owl:Class ;
-  rdfs:comment "Listed in the relationship table but not in the description of the  standard (thb)"@en ;
-  rdfs:comment "Replaces former archi:BusinessActivity because 'BusinessActivity' is not in ArchiMate V2.1"^^xsd:string ;
-  rdfs:subClassOf archi:BusinessBehaviourElement ;
+archi:viewpointHasSourceLibraryViewpoint
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://ikm-group.ch/archimeo/iso42010#ArchitectureViewpoint> ;
+  rdfs:range archi:LibraryViewpoint ;
 .

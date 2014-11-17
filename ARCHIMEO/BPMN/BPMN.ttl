@@ -43,7 +43,7 @@ bpmn:Activity
   rdfs:comment "Former 'Atomar', naming and subclass-structure in accordance to BPMN 2.0 (OMG 2009)"^^xsd:string ;
   rdfs:label "Activity"^^xsd:string ;
   rdfs:subClassOf bpmn:FlowNode ;
-  rdfs:subClassOf archi:BusinessActivity ;
+  rdfs:subClassOf eo:BusinessActivity ;
 .
 bpmn:Annotation
   rdf:type owl:Class ;

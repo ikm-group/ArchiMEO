@@ -25,31 +25,39 @@
   dc:creator "Andreas Martin"^^xsd:string ;
   dc:creator "Barbara Thönssen"^^xsd:string ;
   dc:creator "Simon Nikles"^^xsd:string ;
-  dc:description "The ArchiMate Ontology."@en ;
+  dc:description "The ArchiMate 2.1 Ontology."@en ;
   dc:issued "2012-01-01"^^xsd:date ;
   dc:modified "2013-05-24"^^xsd:date ;
+  dc:modified "2014-11-17"^^xsd:date ;
   dc:publisher <http://de.dbpedia.org/resource/Fachhochschule_Nordwestschweiz> ;
   dc:publisher <http://www.fhnw.ch/business> ;
   dc:publisher "University of Applied Sciences Northwestern Switzerland FHNW"@en ;
   dc:rights "Copyright 2012 FHNW"^^xsd:string ;
   dc:title "The ArchiMate Ontology"@en ;
-  rdfs:comment "Version 1.1: Initial import"@en ;
+  rdfs:comment "Version 2.1: Initial import"@en ;
   owl:imports <http://ikm-group.ch/archiMEO/emo> ;
   owl:imports <http://ikm-group.ch/archiMEO/eo> ;
   owl:imports <http://ikm-group.ch/archiMEO/top> ;
-  owl:versionInfo 1.1 ;
+  owl:versionInfo 2.1 ;
 .
 archi:Access
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The access relationship models the access of behavioral concepts to business or data objects.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructuralRelation ;
+  rdfs:subClassOf archi:StructuralRelationships ;
+.
+archi:ActiveStructureElement
+  rdf:type owl:Class ;
+  rdfs:comment """Archimate V1.0 Core Concept.
+\"The active structure concepts are assigned to behavioral concepts, to show who or what performs the behavior.\" (OpenGroup 2009)"""^^xsd:string ;
+  rdfs:comment "Equivalent to former archi:StructureElement"^^xsd:string ;
+  rdfs:subClassOf eo:EnterpriseObject ;
 .
 archi:Aggregation
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The aggregation relationship indicates that an object groups a number of other objects.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructuralRelation ;
+  rdfs:subClassOf archi:StructuralRelationships ;
 .
 archi:ApplicationCollaboration
   rdf:type owl:Class ;
@@ -61,19 +69,23 @@ archi:ApplicationComponent
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Application Layer Concept.
 \"A modular, deployable, and replaceable part of a system that encapsulates its contents and exposes its functionality through a set of interfaces.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructureElement ;
+  rdfs:subClassOf archi:ActiveStructureElement ;
 .
 archi:ApplicationFunction
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Application Layer Concept.
 \"A coherent group of internal behavior of a component.\" (OpenGroup 2009)"""^^xsd:string ;
+  rdfs:comment """Archimate V2.1
+\"Application function is defined as behavoir element that groups automated behavoir that can be perfomed by an application component\" (OpenGroup 2013, p.39)."""^^xsd:string ;
   rdfs:subClassOf archi:BehaviourElement ;
 .
 archi:ApplicationInteraction
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Application Layer Concept.
 \"A unit of behavior jointly performed by two or more collaborating components.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:ApplicationFunction ;
+  rdfs:comment """Archimate V2.1
+\"An application interaction is defined as the behavoir element that describes the behavoir an application collaboration\" (OpenGroup 2013, p.40)."""^^xsd:string ;
+  rdfs:subClassOf archi:BehaviourElement ;
 .
 archi:ApplicationInterface
   rdf:type owl:Class ;
@@ -85,6 +97,8 @@ archi:ApplicationService
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Application Layer Concept.
 \"An externally visible unit of functionality, provided by one or more components, exposed through well-defined interfaces, and meaningful to the environment.\" (OpenGroup 2009)"""^^xsd:string ;
+  rdfs:comment """Archimate V2.1
+\"An application service is defined as a service that exposes automated behavoir\" (OpenGroup 2013, p.41)."""^^xsd:string ;
   rdfs:comment "Contains the applications which were subordinated to 'tool' in LEMO"^^xsd:string ;
   rdfs:subClassOf archi:Service ;
 .
@@ -93,19 +107,19 @@ archi:Artifact
   rdfs:comment """Archimate V1.0 Technology Layer Concept.
 \"A physical piece of information that is used or produced in a software development process, or by deployment and operation of a system.\" (OpenGroup 2009)"""^^xsd:string ;
   rdfs:comment "Possibility to link data to a concrete system, e.g. client-name is data element, client_name could be a CRM database entity."^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
 .
 archi:Assignment
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The assignment relationship links units of behavior with active elements (e.g., roles, components) that perform them, or roles with actors that fulfill them.\"  (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructuralRelation ;
+  rdfs:subClassOf archi:StructuralRelationships ;
 .
 archi:Association
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation
 \"Association models a relationship between objects that is not covered by another, more specific relationship.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructuralRelation ;
+  rdfs:subClassOf archi:StructuralRelationships ;
 .
 archi:BehaviourElement
   rdf:type owl:Class ;
@@ -113,16 +127,11 @@ archi:BehaviourElement
   rdfs:label "Action"^^xsd:string ;
   rdfs:subClassOf eo:EnterpriseObject ;
 .
-archi:BusinessActivity
-  rdf:type owl:Class ;
-  rdfs:comment "Listed in the relationship table but not in the description of the  standard (thb)"@en ;
-  rdfs:subClassOf archi:BusinessBehaviourElement ;
-.
 archi:BusinessActor
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
 \"An organizational entity that is capable of performing behavior.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructureElement ;
+  rdfs:subClassOf archi:ActiveStructureElement ;
 .
 archi:BusinessBehaviourElement
   rdf:type owl:Class ;
@@ -165,7 +174,7 @@ archi:BusinessObject
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
 \"A unit of information that has relevance from a business perspective.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
 .
 archi:BusinessProcess
   rdf:type owl:Class ;
@@ -178,7 +187,7 @@ archi:BusinessRole
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
 \"A named specific behavior of a business actor participating in a particular context.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructureElement ;
+  rdfs:subClassOf archi:ActiveStructureElement ;
 .
 archi:BusinessService
   rdf:type owl:Class ;
@@ -191,13 +200,13 @@ archi:CommunicationPath
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Technology Layer Concept.
 \"A link between two or more nodes, through which these nodes can exchange information.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructureElement ;
+  rdfs:subClassOf archi:ActiveStructureElement ;
 .
 archi:Composition
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The composition relationship indicates that an object consists of a number of other objects.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructuralRelation ;
+  rdfs:subClassOf archi:StructuralRelationships ;
 .
 archi:Contract
   rdf:type owl:Class ;
@@ -209,7 +218,9 @@ archi:DataObject
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Application Layer Concept.
 \"A coherent, self-contained piece of information suitable for automated processing.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:comment """Archimate V2.1
+\"A data object is defined as a passive element suitable for automated processing\" (OpenGroup 2013, p.43)."""^^xsd:string ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
 .
 archi:Device
   rdf:type owl:Class ;
@@ -217,22 +228,28 @@ archi:Device
 \"A physical computational resource upon which artifacts may be deployed for execution.\" (OpenGroup 2009)"""^^xsd:string ;
   rdfs:subClassOf archi:Node ;
 .
-archi:DynamicRelation
+archi:DynamicRelationships
   rdf:type owl:Class ;
   rdfs:comment "Grouping Construct for Archimate Dynamic Relations according to OpenGroup 2009"^^xsd:string ;
-  rdfs:subClassOf archi:Relation ;
+  rdfs:subClassOf archi:Relationships ;
 .
 archi:Flow
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The flow relationship describes the exchange or transfer of, for example, information or value between processes, function, interactions, and events.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:DynamicRelation ;
+  rdfs:subClassOf archi:DynamicRelationships ;
 .
 archi:Grouping
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The grouping relationship indicates that objects, of the same type or different types, belong together based on some common characteristic.\" (OpenGroup 2009)"""^^xsd:string ;
   rdfs:subClassOf archi:OtherRelationships ;
+.
+archi:InfrastructureFunction
+  rdf:type owl:Class ;
+  rdfs:comment """Archimate V2.1
+\"An infrastructure function is defined as a behavoir element that groups infrastructural behavoir that can be performes by a node\" (OpenGroup 2013, p.51)."""^^xsd:string ;
+  rdfs:subClassOf archi:BehaviourElement ;
 .
 archi:InfrastructureInterface
   rdf:type owl:Class ;
@@ -262,7 +279,7 @@ archi:Meaning
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
 \"The knowledge or expertise present in the representation of a business object, given a particular context.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
 .
 archi:Network
   rdf:type owl:Class ;
@@ -276,40 +293,42 @@ archi:Node
 \"A computational resource upon which artifacts may be deployed for execution.\" (OpenGroup 2009)"""^^xsd:string ;
   rdfs:subClassOf eo:InfrastructureElement ;
 .
-archi:Object
+archi:OtherRelationships
+  rdf:type owl:Class ;
+  rdfs:subClassOf archi:Relationships ;
+.
+archi:PassiveStructureElement
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Core Concept.
 Passive Structure Element.
 \"The passive structure elements are the objects on which behavior is performed. In the domain of information-intensive organizations, which is the main focus of the language, these are usually information or data objects, but they may also be used to represent physical objects.\" (OpenGroup 2009)"""^^xsd:string ;
   rdfs:comment "Equivalent to former EO:Resource"^^xsd:string ;
+  rdfs:comment "Equivalent to former archi:Object"^^xsd:string ;
   rdfs:subClassOf eo:EnterpriseObject ;
-.
-archi:OtherRelationships
-  rdf:type owl:Class ;
-  rdfs:subClassOf archi:Relation ;
 .
 archi:Product
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
 \"A coherent collection of services, accompanied by a contract/set of agreements, which is offered as a whole to (internal or external) customers.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
 .
 archi:Realisation
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The realization relationship links a logical entity with a more concrete entity that realizes it.\"  (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructuralRelation ;
+  rdfs:subClassOf archi:StructuralRelationships ;
 .
-archi:Relation
+archi:Relationships
   rdf:type owl:Class ;
   rdfs:comment "Grouping Concept for Archimate Relations"^^xsd:string ;
+  rdfs:comment "Replaces former archi:Relation because 'Relation' is not an ArchiMate concept"^^xsd:string ;
   rdfs:subClassOf eo:EnterpriseObject ;
 .
 archi:Representation
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
 \"The perceptible form of the information carried by a business object.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
 .
 archi:Service
   rdf:type owl:Class ;
@@ -323,16 +342,10 @@ archi:Specialisation
 \"The specialization relationship indicates that an object is a specialization of another object.\" (OpenGroup 2009)"""^^xsd:string ;
   rdfs:subClassOf archi:OtherRelationships ;
 .
-archi:StructuralRelation
+archi:StructuralRelationships
   rdf:type owl:Class ;
   rdfs:comment "Grouping Construct for Archimate Structural Relations according to OpenGroup 2009"^^xsd:string ;
-  rdfs:subClassOf archi:Relation ;
-.
-archi:StructureElement
-  rdf:type owl:Class ;
-  rdfs:comment """Archimate V1.0 Core Concept.
-\"The active structure concepts are assigned to behavioral concepts, to show who or what performs the behavior.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf eo:EnterpriseObject ;
+  rdfs:subClassOf archi:Relationships ;
 .
 archi:SystemSoftware
   rdf:type owl:Class ;
@@ -345,19 +358,25 @@ archi:Triggering
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The triggering relationship describes the temporal or causal relations between processes, functions, interactions, and events.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:DynamicRelation ;
+  rdfs:subClassOf archi:DynamicRelationships ;
 .
 archi:UsedBy
   rdf:type owl:Class ;
   rdfs:comment """Archimate Relation.
 \"The used by relationship models the use of services by processes, functions, or interactions and the access to interfaces by roles, components, or collaborations.\"  (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:StructuralRelation ;
+  rdfs:subClassOf archi:StructuralRelationships ;
 .
 archi:Value
   rdf:type owl:Class ;
   rdfs:comment """Archimate V1.0 Business Layer Concept.
 \"That which makes some party appreciate a service or product, possibly in relation to providing it, but more typically to acquiring it.\" (OpenGroup 2009)"""^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
+.
+archi:accesses
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Archimate V2.1 relatioships are determined by nouns: here 'access'"^^xsd:string ;
+  rdfs:domain archi:BehaviourElement ;
+  rdfs:range archi:PassiveStructureElement ;
 .
 archi:activeStructureComprisesInterface
   rdf:type owl:ObjectProperty ;
@@ -374,6 +393,22 @@ archi:aggregates
   rdfs:label "aggregation"@en ;
   rdfs:range eo:EnterpriseObject ;
 .
+archi:assignedTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Archimate V2.1 relatioships are determined by nouns: here 'assignment'"^^xsd:string ;
+  rdfs:comment "The assignment relationship links active elements (e.g., business roles or application components) with units of behavior that are performed by them,  or business actors with business roles that are fulfilled by them. (The Open Group)"@en ;
+  rdfs:domain eo:EnterpriseObject ;
+  rdfs:label "assignment"@en ;
+  rdfs:range eo:EnterpriseObject ;
+.
+archi:associatedWith
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "An association models a relationship between objects that is not covered  by another, more specific relationship (The Open Group)"@en ;
+  rdfs:comment "Archimate V2.1 relatioships are determined by nouns: here 'association'"^^xsd:string ;
+  rdfs:domain eo:EnterpriseObject ;
+  rdfs:label "association"@en ;
+  rdfs:range eo:EnterpriseObject ;
+.
 archi:behaviourComprisesBehaviourElement
   rdf:type owl:ObjectProperty ;
   rdfs:subPropertyOf emo:aspectCoversObject ;
@@ -383,11 +418,25 @@ archi:behaviourComprisesService
   rdfs:range archi:Service ;
   rdfs:subPropertyOf emo:aspectCoversObject ;
 .
+archi:composedOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Archimate V2.1 relatioships are determined by nouns: here 'composition'"^^xsd:string ;
+  rdfs:comment "The composition relationship indicates that an object consists of a number  of other objects (The Open Group)"@en ;
+  rdfs:domain eo:EnterpriseObject ;
+  rdfs:label "composition"@en ;
+  rdfs:range eo:EnterpriseObject ;
+.
 archi:flowsTo
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Archimate V2.1 relatioships are determined by nouns: here 'flow'"^^xsd:string ;
   rdfs:comment "The flow relationship describes the exchange or transfer of, for example, information or value between processes, function, interactions, and events (The Open Group)"@en ;
   rdfs:domain eo:EnterpriseObject ;
   rdfs:label "flow"@en ;
+  rdfs:range eo:EnterpriseObject ;
+.
+archi:groups
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain eo:EnterpriseObject ;
   rdfs:range eo:EnterpriseObject ;
 .
 archi:hasAccessTo
@@ -397,57 +446,35 @@ archi:hasAccessTo
   rdfs:label "access"@en ;
   rdfs:range eo:EnterpriseObject ;
 .
-archi:inverse_of_isAssociatedWith
+archi:influence
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Archimate V2.1 relatioships are determined by nouns: here 'influence'"^^xsd:string ;
   rdfs:domain eo:EnterpriseObject ;
   rdfs:range eo:EnterpriseObject ;
 .
-archi:isAssignedTo
+archi:passiveStructureComprisesObject
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The assignment relationship links active elements (e.g., business roles or application components) with units of behavior that are performed by them,  or business actors with business roles that are fulfilled by them. (The Open Group)"@en ;
-  rdfs:domain eo:EnterpriseObject ;
-  rdfs:label "assignment"@en ;
-  rdfs:range eo:EnterpriseObject ;
+  rdfs:range archi:PassiveStructureElement ;
+  rdfs:subPropertyOf emo:aspectCoversObject ;
 .
-archi:isAssociatedWith
+archi:realizes
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "An association models a relationship between objects that is not covered  by another, more specific relationship (The Open Group)"@en ;
-  rdfs:domain eo:EnterpriseObject ;
-  rdfs:label "association"@en ;
-  rdfs:range eo:EnterpriseObject ;
-  owl:inverseOf archi:inverse_of_isAssociatedWith ;
-.
-archi:isComposedOf
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "The composition relationship indicates that an object consists of a number  of other objects (The Open Group)"@en ;
-  rdfs:domain eo:EnterpriseObject ;
-  rdfs:label "composition"@en ;
-  rdfs:range eo:EnterpriseObject ;
-.
-archi:isRealizedBy
-  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Equivalent to former 'archi:isRealizedBy'"^^xsd:string ;
   rdfs:comment "The realization relationship links a logical entity with a more concrete entity that realizes it (The Open Group)"@en ;
   rdfs:domain eo:EnterpriseObject ;
   rdfs:label "realisation"@en ;
   rdfs:range eo:EnterpriseObject ;
 .
-archi:isUsedBy
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """The used by relationship models the use of services by processes, functions, or interactions and the access to interfaces by roles, 
- components, or collaborations (The Open Group)"""@en ;
-  rdfs:domain eo:EnterpriseObject ;
-  rdfs:label "used by"@en ;
-  rdfs:range eo:EnterpriseObject ;
-.
-archi:passiveStructureComprisesObject
-  rdf:type owl:ObjectProperty ;
-  rdfs:range archi:Object ;
-  rdfs:subPropertyOf emo:aspectCoversObject ;
-.
 archi:representationRealizesBusinessObject
   rdf:type owl:ObjectProperty ;
   rdfs:domain archi:Representation ;
   rdfs:range archi:BusinessObject ;
+.
+archi:specializes
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Archimate V2.1 relatioships: specialization"^^xsd:string ;
+  rdfs:domain eo:EnterpriseObject ;
+  rdfs:range eo:EnterpriseObject ;
 .
 archi:triggers
   rdf:type owl:ObjectProperty ;
@@ -455,4 +482,19 @@ archi:triggers
   rdfs:domain eo:EnterpriseObject ;
   rdfs:label "triggering"@en ;
   rdfs:range eo:EnterpriseObject ;
+.
+archi:usedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Archimate V2.1 relatioships are determined by nouns: here 'usedBy'"^^xsd:string ;
+  rdfs:comment """The used by relationship models the use of services by processes, functions, or interactions and the access to interfaces by roles, 
+ components, or collaborations (The Open Group)"""@en ;
+  rdfs:domain eo:EnterpriseObject ;
+  rdfs:label "used by"@en ;
+  rdfs:range eo:EnterpriseObject ;
+.
+eo:BusinessActivity
+  rdf:type owl:Class ;
+  rdfs:comment "Listed in the relationship table but not in the description of the  standard (thb)"@en ;
+  rdfs:comment "Replaces former archi:BusinessActivity because 'BusinessActivity' is not in ArchiMate V2.1"^^xsd:string ;
+  rdfs:subClassOf archi:BusinessBehaviourElement ;
 .

@@ -415,7 +415,7 @@ eo:Component
   rdf:type owl:Class ;
   rdfs:comment "Components are parts of a tangible product. This is a pendant to archi:BusinessService which may be part of an intangible product."^^xsd:string ;
   rdfs:label "Component"^^xsd:string ;
-  rdfs:subClassOf archi:Object ;
+  rdfs:subClassOf archi:PassiveStructureElement ;
 .
 eo:ComputerAided
   rdf:type owl:Class ;
@@ -615,7 +615,7 @@ eo:InformationManagementSystem
 eo:InfrastructureElement
   rdf:type owl:Class ;
   rdfs:label "InfrastructureElement"^^xsd:string ;
-  rdfs:subClassOf archi:StructureElement ;
+  rdfs:subClassOf archi:ActiveStructureElement ;
 .
 eo:IntangibleProduct
   rdf:type owl:Class ;
@@ -2226,7 +2226,7 @@ eo:mp4
 .
 eo:objectManagedByService
   rdf:type owl:ObjectProperty ;
-  rdfs:domain archi:Object ;
+  rdfs:domain archi:PassiveStructureElement ;
   rdfs:label "object is managed by service"@en ;
   rdfs:range archi:Service ;
 .
